@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Distributed Chess Arena</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+</head>
+
+<body>
+
+<div class="main">
+
+    <!-- LEFT PANEL -->
+    <div class="panel">
+        <h1>Distributed Chess Arena</h1>
+        <p>Play real-time chess on multiple devices.</p>
+
+        <label>Backend IP</label>
+        <input id="serverIp" value="127.0.0.1">
+
+        <label>Player Name</label>
+        <input id="username" placeholder="Enter your name">
+
+        <button onclick="createUser()">Create Player</button>
+        <button onclick="createRoom()">Create Room</button>
+
+        <input id="roomInput" placeholder="Enter room code">
+        <button onclick="joinRoom()">Join Room</button>
+
+        <!-- SHARE BUTTON -->
+        <button onclick="shareRoomCode()">Share Room Code</button>
+
+        <div class="status">
+            <p><b>Room:</b> <span id="roomText">Not connected</span></p>
+            <p><b>Your Color:</b> <span id="colorText">None</span></p>
+            <p><b>Status:</b> <span id="statusText">Idle</span></p>
+            <p><b>Turn:</b> <span id="turnText">White</span></p>
+        </div>
+
+        <div class="help">
+            <h3>How to Play</h3>
+            <p>1. Click your piece</p>
+            <p>2. Click destination square</p>
+            <p>3. Opponent move appears instantly</p>
+        </div>
+    </div>
+
+    <!-- CHESS BOARD -->
+    <div class="board-area">
+        <div class="board-title">Live Chess Board</div>
+        <div id="board"></div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="panel">
+        <h2>Distributed System</h2>
+
+        <div class="module">Client Node</div>
+        <div class="module">WebSocket Sync</div>
+        <div class="module">Game Server</div>
+        <div class="module">MySQL Database</div>
+        <div class="module">Fault Recovery</div>
+
+        <h2>Game Logs</h2>
+        <div id="logs"></div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

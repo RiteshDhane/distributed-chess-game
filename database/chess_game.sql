@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS distributed_chess_game;
+USE distributed_chess_game;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS games (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    room_code VARCHAR(20) UNIQUE NOT NULL,
+    white_player VARCHAR(100),
+    black_player VARCHAR(100),
+    status VARCHAR(30) DEFAULT 'waiting',
+    fen TEXT NOT NULL,
+    winner VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS moves (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    room_code VARCHAR(20) NOT NULL,
+    player VARCHAR(100) NOT NULL,
+    move_uci VARCHAR(20) NOT NULL,
+    fen TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

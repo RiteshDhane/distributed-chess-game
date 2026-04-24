@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
+    color: white;
+}
+
+.main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 310px 1fr 300px;
+    gap: 25px;
+    padding: 25px;
+}
+
+.panel {
+    background: rgba(255,255,255,0.08);
+    padding: 22px;
+    border-radius: 22px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+h1, h2 {
+    color: #facc15;
+}
+
+label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    color: #cbd5e1;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #facc15, #f97316);
+    color: #111827;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.status, .help {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 16px;
+    background: rgba(0,0,0,0.28);
+}
+
+.board-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.board-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #facc15;
+    margin-bottom: 18px;
+}
+
+#board {
+    width: 560px;
+    max-width: 90vw;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.module {
+    padding: 13px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.12);
+    border-left: 5px solid #22c55e;
+}
+
+.module::before {
+    content: "● ";
+    color: #22c55e;
+}
+
+#logs {
+    height: 280px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.3);
+    padding: 12px;
+    border-radius: 14px;
+}
+
+.log-item {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.success {
+    color: #86efac;
+}
+
+.error {
+    color: #fca5a5;
+}
+
+.info {
+    color: #93c5fd;
+}
+
+.highlight-square {
+    box-shadow: inset 0 0 0 4px #facc15;
+}
+
+@media(max-width: 1050px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+}
